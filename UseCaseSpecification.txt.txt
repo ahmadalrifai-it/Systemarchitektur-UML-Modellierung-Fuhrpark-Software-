@@ -1,0 +1,39 @@
+Use Case „Stornierung einer Fahrzeugreservierung“
+
+Ziel: 
+Hochschulangehöriger möchte eine mit dem System vorgenommene Fahrzeugreservierung stornieren.
+
+Vorbedingungen: 
+Hochschulangehöriger ist im System angemeldet.
+Hochschulangehöriger hat erfolgreich eine Fahrzeugreservierung hinterlegt. 
+
+Nachbedingungen(Erfolg):
+
+Positivszenario: Reservierung ist storniert; Fahrzeug steht wieder zur Verfügung; Nachrücker (falls vorhanden) sind informiert. 
+Ausnahmeszenarien A und B: Fahrzeugreservierung wird unverändert beibehalten; beteiligte Akteure sind informiert.
+
+Positivszenario (Manuelle Stornierung durch Hochschulangehörigen)
+
+1. Hochschulangehöriger wählt bestehende Fahrzeugreservierung aus.
+2. Hochschulangehöriger nutzt Funktion „Reservierung stornieren“.
+3. System fordert zur Bestätigung der Stornierung auf.
+4. Hochschulangehöriger bestätigt Stornierungswunsch.
+5. System storniert ausgewählte Fahrzeugreservierung.
+6. System aktualisiert die Fahrzeugverfügbarkeit.
+Erweiterungspunkt: Nachrücker informieren
+ENDE
+
+Ausnahmeszenario A: Stornierung wird vom System abgebrochen
+(nach Schritt 2 Positivszenario)
+
+A1. System stellt fest, dass Reservierung nicht mehr stornierbar ist (z. B. Frist abgelaufen).
+A2. System verweigert die Stornierung.
+A3. System informiert Hochschulangehörigen über den Grund der Ablehnung.
+ENDE
+
+Ausnahmeszenario B: Stornierung wird vom Hochschulangehörigen abgebrochen
+(nach Schritt 3 Positivszenario)
+
+B1. Hochschulangehöriger bricht manuell ab.
+B2. System behält Fahrzeugreservierung unverändert bei.
+
